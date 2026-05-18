@@ -1,1 +1,32 @@
+name: etl job
 
+on:
+    push:
+        branches:
+        - main
+
+jobs:
+    extract_data_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout code
+          uses: actions/checkout@v2
+        - name: execute extract_data.py
+          run: python extract_data.py 
+
+    transform_data_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout code
+          uses: actions/checkout@v2
+        - name: execute transform_data.py
+          run: python transform_data.py 
+
+    load_data_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout code
+          uses: actions/checkout@v2
+        - name: execute load_data.py
+          run: python load_data.py
+    
