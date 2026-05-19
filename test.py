@@ -1,10 +1,4 @@
-import pandas as pd
+import os 
+username = os.getenv("DB_USERNAME_KEY")
 
-data = {
-    "name" : ["A", "B"],
-    "age": [10, 20]
-}
-
-df = pd.DataFrame(data)
-
-print(df)
+print("username : ", username)
